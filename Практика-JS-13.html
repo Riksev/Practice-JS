@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 13</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Напишіть функцію, яка перетворює шістнадцяткове число (задане у вигляді рядка) на десяткове число.
+		// Приклад коду:
+		// hexToDec('1') => 1
+		// hexToDec('a') => 10
+		// hexToDec('10') => 16
+		// hexToDec('FF') => 255
+		// hexToDec('-C') => 12
+		
+		function hexToDec(string) {
+			let decimal = 0;
+			let positive = true;
+			for (let i = 0; i < string.length; i++) {
+				let number;
+				if (!isNaN(string[i])) {
+					number = parseInt(string[i]);
+				}
+				else if (string[i] == '-') {
+					positive = false;
+					continue;
+				}
+				else {
+					let mapLetterToNumber = new Map([['A', 10], ['B', 11], ['C', 12], ['D', 13], ['E', 14], ['F', 15]]);
+					number = mapLetterToNumber.get(string[i].toUpperCase());
+				}
+				decimal += number * Math.pow(16, string.length - i - 1);
+			}
+			if (!positive) return -decimal;
+			return decimal;
+		}
+		
+		console.log(hexToDec('1'));
+		console.log(hexToDec('a'));
+		console.log(hexToDec('10'));
+		console.log(hexToDec('FF'));
+		console.log(hexToDec('-C'));
+		
+	</script>
+</body>
+</html>

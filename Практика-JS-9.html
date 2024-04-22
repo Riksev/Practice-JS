@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 9</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Напишіть функцію, яка приймає масив, а повертає добуток елементів масиву, помножених по порядку один на одного.
+		// Приклад коду:
+		// example([1, 2, 3, 4]) => 1 * 2 * 3 * 4 = 24
+		
+		function getProductOfNumbers(array) {
+			if (array.length == 0) {
+				return 0;
+			}
+			let result = 1;
+			for (let i of array) {
+				result *= i;
+			}
+			return result;
+		}
+
+		alert(getProductOfNumbers([1, 2, 3, 4]));
+	</script>
+</body>
+</html>

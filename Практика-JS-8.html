@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 8</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Напишіть функцію, яка обчислює підсумкову оцінку студента в залежності від двох параметрів: 
+		// оцінки за іспит та кількість виконаних проектів. 
+		// Ваша функція повинна приймати два аргументи: 
+		// іспит – оцінка за іспит (від 0 до 100); проекти – кількість реалізованих проектів (від 0 і вище); 
+		// Ця функція має повертати число (підсумкова оцінка). Є чотири типи підсумкових оцінок:
+		// 			100, якщо оцінка за іспит більша за 90 або кількість виконаних проектів більша за 10.
+		// 			90, якщо оцінка за іспит більша за 75 або кількість виконаних проектів не менше ніж 5.
+		// 			75, якщо оцінка за іспит більше 50 або кількість виконаних проектів не менше ніж 2.
+		// 			0, в інших випадках
+
+		function finalGrade(testGrade, projectsCount) {
+			let grade;
+
+			if (testGrade > 90 || projectsCount > 10) {
+				grade = 100;
+			}
+			else if (testGrade > 75 || projectsCount >= 5) {
+				grade = 90;
+			}
+			else if (testGrade > 50 || projectsCount >= 2) {
+				grade = 75;
+			}
+			else {
+				grade = 0;
+			}
+
+			return grade;
+		}
+
+		console.log(finalGrade(100, 12));
+		console.log(finalGrade(99, 0));
+		console.log(finalGrade(10, 15));
+		console.log(finalGrade(85, 5));
+		console.log(finalGrade(55, 3));
+		console.log(finalGrade(55, 0));
+		console.log(finalGrade(20, 2));
+	</script>
+</body>
+</html>

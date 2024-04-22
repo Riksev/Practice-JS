@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 3</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Запитайте ім'я користувача за допомогою методу prompt. 
+		// Виведіть за допомогою alert повідомлення 'Ваше ім'я {ім'я}'.
+
+		let name = prompt("Введіть ваше ім'я:");
+		while (!name) {
+			name = prompt("Введіть ваше ім'я:");
+		}
+		alert(`Ваше ім'я ${name}`);
+	</script>
+</body>
+</html>

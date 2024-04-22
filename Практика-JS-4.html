@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 4</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Даний масив ['Саша', 'Петя', 'Оксана'], зробіть із нього ['Оксанa', 'Олег', 'Саша']. 
+		// Реалізуйте це завдання двома способами. 
+		// У першому вихідний масив має бути змінений, у другому - не може бути змінений.
+
+		// Перший спосіб:
+		let array1 = ['Саша', 'Петя', 'Оксана'];
+		array1.reverse();
+		array1[1] = 'Олег';
+		alert(array1);
+
+		// Другий спосіб:
+		const array2 = ['Саша', 'Петя', 'Оксана'];
+		let array2Copy = array2.slice();
+		array2Copy.reverse();
+		array2Copy[1] = 'Олег';
+		alert(array2);
+		alert(array2Copy);
+	</script>
+</body>
+</html>
