@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 16</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Напишіть функцію, яка приймає рядок і число. Поверніть у вигляді масиву тільки ті слова, довжина яких перевищує число.
+		// Приклад коду:
+		// example ('Сьогодні чудовий день. З самого ранку ми підемо на озеро, купатися.', 5) => ['Сьогодні', 'Відмінний', 'самого', 'підемо', 'купатися']
+		// example('Над містом хмари, коридори, береги, проспект, річка.', 7) => ['коридори', 'проспект']
+		
+		function getCorrespondingWords(string, n) {
+			if (n < 1) return '';
+			return string.replaceAll(/[\.,?!:]/g, '').split(' ').reduce((result, word) => {
+				if (word.length > n) {
+					result.push(word);
+				}
+				return result;
+			}, new Array());
+		}
+		
+		console.log(getCorrespondingWords('Сьогодні чудовий день. З самого ранку ми підемо на озеро, купатися.', 5));
+		console.log(getCorrespondingWords('Над містом хмари, коридори, береги, проспект, річка.', 7));
+		
+	</script>
+</body>
+</html>

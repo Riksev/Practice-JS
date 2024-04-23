@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 15</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Ви повинні реалізувати функцію, яка повертає різницю між найбільшим та найменшим значенням у списку , 
+		// отриманому як аргумент функції. Масив, який отримує функція як аргумент, може містити позитивні та негативні числа. 
+		// Якщо масив порожній або має значення, поверніть нуль. Спочатку масив буде поданий у невідсортованому вигляді. 
+		// Приклад: maxDiff([1, 2, 3, -4]); // Поверне 7, тому що: 3 - (-4) == 7
+		// Приклад коду:
+		// maxDiff([0, 1, 2, 3, 4, 5, 6]) => 6
+		// maxDiff([-0, 1, 2, -3, 4, 5, -6]) => 11
+		// maxDiff([0, 1, 2, 3, 4, 5, 16]) => 16
+		// maxDiff([16]) => 0
+		// maxDiff([]) => 0
+		
+		function maxDiff(array) {
+			if (array.length < 2) return 0;
+			return Math.max(...array) - Math.min(...array);
+		}
+		
+		console.log(maxDiff([0, 1, 2, 3, 4, 5, 6]));
+		console.log(maxDiff([-0, 1, 2, -3, 4, 5, -6]));
+		console.log(maxDiff([0, 1, 2, 3, 4, 5, 16]));
+		console.log(maxDiff([16]));
+		console.log(maxDiff([]));
+		
+	</script>
+</body>
+</html>
