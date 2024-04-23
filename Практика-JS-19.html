@@ -15,8 +15,44 @@
 		// evensAndOdds(2) => '10'
 		// evensAndOdds(13) => 'd'
 
+		function decToHex(number) {
+			const mapLetterToNumber = new Map([[10, 'A'], [11, 'B'], [12, 'C'], [13, 'D'], [14, 'E'], [15, 'F']]);
+			let result = '';
+			while (number > 0) {
+				let remainder = number % 16;
+				if (remainder >= 10) {
+					result += mapLetterToNumber.get(remainder);
+				}
+				else {
+					result += remainder;
+				}
+				number = Math.floor(number / 16);
+			}
+			return result.split('').reverse().join('');
+		}
+
+		function decToBin(number) {
+			let result = '';
+			while (number > 0) {
+				result += number % 2;
+				number = Math.floor(number / 2);
+			}
+			return result.split('').reverse().join('');
+		}
+
 		function evensAndOdds(number) {
-			
+			let positive = true;
+			if (number < 0) {
+				positive = false;
+			}
+			if (number % 2) { //odd
+				if (!positive) return -decToHex(number);
+				return decToHex(number);
+			}
+			else { //even
+				if (!positive) return -decToBin(number);
+				return decToBin(number);
+			}
 		}
 
 		console.log(evensAndOdds(2));

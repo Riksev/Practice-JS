@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 20</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Необхідно реалізувати функцію, яка на вході приймає масив з різними типами даних
+		//  = = gt; ['a', 1, 2, false, 'b'], а повертає об'єкт, у якому ці типи даних розсортовані за ключами.
+		// Приклад коду:
+		// {
+		//    number: [1, 2],
+		//    string: ['a', 'b'],
+		//    boolean: [false]
+		// }
+
+		function sortByDataType(array) {
+			let object = {};
+			for (let i of array) {
+				if (object[typeof i] == null) {
+					object[typeof i] = new Array();
+				}
+				object[typeof i].push(i);
+			}
+			return object;
+		}
+
+		console.log(sortByDataType(['a', 1, 2, false, 'b']));
+	</script>
+</body>
+</html>

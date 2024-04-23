@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика JS 21</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Завдання:
+		// Дано рядок, що складається з букв a, b, c. Ваше завдання змінити розташування літер a та b, але не чіпати c.
+		// Приклад коду:
+		// switcheroo('abc') =>'bac'
+		// switcheroo('aaabcccbaaa') =>'bbbacccabbb'
+		// switcheroo('ccccc') =>'ccccc'
+		// switcheroo('acb') =>'bca'
+		// switcheroo('aabacbaa') =>'bbabcabb'
+
+		function switcheroo(string) {
+			string = string.replaceAll(/[ab]/g, function(letter){
+				switch (letter) {
+					case 'a': return 'b';
+					case 'b': return 'a';
+				}
+				return letter;
+			});
+			return string;
+		}
+
+		console.log(switcheroo('abc'));
+		console.log(switcheroo('aaabcccbaaa'));
+		console.log(switcheroo('ccccc'));
+		console.log(switcheroo('acb'));
+		console.log(switcheroo('aabacbaa'));
+	</script>
+</body>
+</html>
